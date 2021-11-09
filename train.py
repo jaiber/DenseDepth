@@ -1,6 +1,8 @@
 import os, sys, glob, time, pathlib, argparse
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '5'
 
+import tensorflow.compat.v1 as tf
+tf.get_default_graph()
 # Kerasa / TensorFlow
 from loss import depth_loss_function
 from utils import predict, save_images, load_test_data
@@ -8,9 +10,9 @@ from model import create_model
 from data import get_nyu_train_test_data, get_unreal_train_test_data
 from callbacks import get_nyu_callbacks
 
-from keras.optimizers import Adam
-from keras.utils import multi_gpu_model
-from keras.utils.vis_utils import plot_model
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.utils import multi_gpu_model
+from tensorflow.keras.utils import plot_model
 
 # Argument Parser
 parser = argparse.ArgumentParser(description='High Quality Monocular Depth Estimation via Transfer Learning')

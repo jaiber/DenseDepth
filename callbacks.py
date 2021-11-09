@@ -3,8 +3,8 @@ import random
 import numpy as np
 from PIL import Image
 
-import keras
-from keras import backend as K
+import tensorflow.keras
+from tensorflow.keras import backend as K
 from utils import DepthNorm, predict, evaluate
 
 import tensorflow as tf
